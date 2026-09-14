@@ -1,0 +1,16 @@
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Gradle wrapper jar is intentionally not committed to this repo's
+# initial scaffold — see README.md. Once you generate it locally
+# (`gradle wrapper`), you likely DO want to commit it, so remove
+# this line at that point:
+gradle/wrapper/gradle-wrapper.jar
