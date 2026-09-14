@@ -41,7 +41,32 @@ app/src/main/java/com/example/sudoku/
 
 ## Status
 
-🟡 Concept stage — game logic and UI not yet implemented.
+🟡 Logic layer done and tested. UI not yet implemented — the app doesn't
+build/run yet, but the puzzle engine is real, working code.
+
+### What exists so far
+
+- `logic/` — the solver (backtracking + minimum-remaining-values
+  heuristic), the generator (produces puzzles with a guaranteed unique
+  solution), and `GameBoard` (mutable in-progress game state: notes,
+  undo, hints, mistake tracking). Zero Android dependencies — plain
+  Kotlin.
+- `data/GameStorage.kt` — SharedPreferences + JSON save/resume and
+  best-time tracking, ready for the UI layer to call into.
+- `app/src/test/.../SudokuLogicTest.kt` — JUnit suite covering the
+  solver, generator (uniqueness + clue-count checks across all
+  difficulties), and game state. Run with:
+
+  ```bash
+  ./gradlew testDebugUnitTest
+  ```
+
+### Coming next
+
+- Jetpack Compose UI: home screen (difficulty picker), game screen
+  (grid, number pad, toolbar, timer), and the ViewModel wiring it to
+  `logic/` and `data/`.
+
 
 ## License
 
